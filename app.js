@@ -23,7 +23,7 @@ window.addEventListener('load', async e => {
 });
 
 async function updateSources() {
-    const res = await fetch(`http://newsapi.org/v1/sources`);
+    const res = await fetch(`https://newsapi.org/v2/sources?apiKey=${apiKey}`);
     const json = await res.json();
 
     sourceSelector.innerHTML = json.sources
@@ -32,7 +32,7 @@ async function updateSources() {
 }
 
 async function updateNews(source = defaultSource) {
-    const res = await fetch(`http://newsapi.org/v1/articles?source=${source}&apiKey=${apiKey}`)
+    const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&sortBy=top&apiKey=${apiKey}`)
     const json = await res.json();
 
     main.innerHTML = json.articles.map(createArticle).join('\n');
