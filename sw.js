@@ -1,3 +1,4 @@
+const cacheName = 'news-v1';
 const staticAssets = [
     './',
     './style.css',
@@ -7,7 +8,7 @@ const staticAssets = [
 ]
 
 self.addEventListener('install', async () => {
-    const cache = await caches.open('news-static');
+    const cache = await caches.open(cacheName);
     cache.addAll(staticAssets);
 });
 
