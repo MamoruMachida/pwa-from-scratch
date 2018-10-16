@@ -4,7 +4,7 @@
     "background_color": "#ffffff",
     "display": "browser",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/pwa-from-scratch",
     "icons": [{
             "src": "images/icons/icon-72x72.png",
             "sizes": "72x72",
