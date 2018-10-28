@@ -12,8 +12,10 @@ window.addEventListener('load', async e => {
         updateNews(e.target.value);
     });
 
+    // ServiceWorkerに対応しているブラウザか判定
     if('serviceWorker' in navigator) {
         try {
+            // sw.jsをサービスワーカーに登録
             navigator.serviceWorker.register('sw.js');
             console.log(`SW registered`);
         } catch (error) {
